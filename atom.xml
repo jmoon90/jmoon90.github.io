@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[3 Month RoR Reverse Engineering]]></title>
+  <title><![CDATA[John Moon's Programming Blog]]></title>
   <link href="http://jmoon90.github.io/atom.xml" rel="self"/>
   <link href="http://jmoon90.github.io/"/>
-  <updated>2013-11-05T23:12:16-05:00</updated>
+  <updated>2013-11-05T23:13:16-05:00</updated>
   <id>http://jmoon90.github.io/</id>
   <author>
-    <name><![CDATA[John Moon]]></name>
+    <name><![CDATA[3 Month RoR Reverse Engineering]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
