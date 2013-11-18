@@ -1,17 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[John Moon's Programming Blog]]></title>
+  <title><![CDATA[3 Month RoR Reverse Engineering]]></title>
   <link href="http://jmoon90.github.io/atom.xml" rel="self"/>
   <link href="http://jmoon90.github.io/"/>
-  <updated>2013-11-10T23:00:58-05:00</updated>
+  <updated>2013-11-17T19:42:15-05:00</updated>
   <id>http://jmoon90.github.io/</id>
   <author>
-    <name><![CDATA[3 Month RoR Reverse Engineering]]></name>
+    <name><![CDATA[John Moon]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Vim and everything else]]></title>
+    <link href="http://jmoon90.github.io/blog/2013/11/17/vim-and-everything-else/"/>
+    <updated>2013-11-17T19:09:00-05:00</updated>
+    <id>http://jmoon90.github.io/blog/2013/11/17/vim-and-everything-else</id>
+    <content type="html"><![CDATA[<p>Using Vim is one of the most amazingly frustrating, confusing, rewarding, and geeking out feeling ever. If you asked me how to copy something in Vim you were out of luck, because I couldn&rsquo;t even navigate folders and files in vim.</p>
+
+<p>This journey of teaching myself Vim with the help of Eric from LA has been a very rewarding. I still have to use Sublime rarely when I want to copy big chunkcs of code on a chat or my gist page, but give me another week and I am confident I&rsquo;ll figure it out.</p>
+
+<p>Having used Sublime for quite some time now, here are some a list of things that each editor does better.</p>
+
+<h3>Vim</h3>
+
+<ol>
+<li>Move around super fast. I installed relative numbers so that I can go to the exact line I want to change.</li>
+<li>No mouse. It&rsquo;s self explainatory.</li>
+<li>You feel awesome slowly mastering and the in&rsquo;s and out&rsquo;s of the editor.</li>
+<li>I don&rsquo;t know when the learning curve ceiling ends. I learn something new to improve my day to day coding every days.</li>
+</ol>
+
+
+<h3>Sublime</h3>
+
+<ol>
+<li>Super easy to use. Basically no learning curve.</li>
+<li>Command-p is a little bit better than Vim&rsquo;s. E.G. Searching for file apple_to_go.rb. In sublime you can type apple to go and it will search for you. In vim you have to pretty much type it exactly how it is. If you put a space between words it won&rsquo;t suggest any results.</li>
+<li>Copy and paste is terribly easy.</li>
+</ol>
+
+
+<p>Overall I think it is important to improve and increase your tools in your development toolbox and Vim is definitely a big improvement for me. I see myself working towards understand vim in a deeper level in the up coming weeks. I am excited to see what more I can do with this new found tool.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[10 week programming bootcamp with Launch Academy]]></title>
