@@ -4,7 +4,7 @@
   <title><![CDATA[3 Month RoR Reverse Engineering]]></title>
   <link href="http://jmoon90.github.io/atom.xml" rel="self"/>
   <link href="http://jmoon90.github.io/"/>
-  <updated>2013-11-17T19:42:15-05:00</updated>
+  <updated>2013-11-20T22:20:11-05:00</updated>
   <id>http://jmoon90.github.io/</id>
   <author>
     <name><![CDATA[John Moon]]></name>
@@ -12,6 +12,52 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Ask Google through your Terminal]]></title>
+    <link href="http://jmoon90.github.io/blog/2013/11/17/ask-google-through-your-terminal/"/>
+    <updated>2013-11-17T19:43:00-05:00</updated>
+    <id>http://jmoon90.github.io/blog/2013/11/17/ask-google-through-your-terminal</id>
+    <content type="html"><![CDATA[<p>During my first week at Launch Acadmey I built a simple ruby script so that I don&rsquo;t have to leave my keyboard to ask a question through google. I call it NoMouse.</p>
+
+<p>The idea came when Johnny, one of my mentors at LaunchAcademy, taught me that everything we do in our GUI can be done through the terminal. This was a very interesting and cool concept as a beginner. I wanted to test this theory out. I wanted to see if I can open up my browser from the terminal and open a specific page.</p>
+
+<p>Here is how I tackled the theory. I needed to first figure out how to open a browser or website through my terminal.</p>
+
+<blockquote><p>open &ldquo;<a href="http://www.google.com">http://www.google.com</a>&rdquo;</p></blockquote>
+
+<p>This was possible. Now I need to know if I can run a script and open a browser. In my terminal I ran ruby browser.rb and it would run the following script.</p>
+
+<blockquote><p>system(&ldquo;open&rdquo;, &ldquo;<a href="http://www.google.com">http://www.google.com</a>&rdquo;)</p></blockquote>
+
+<p>This opened up possibilities for me. I was becoming greedy! Not only could I open a browser I wanted to see if I can feed a question to the script for it to search.</p>
+
+<p>I needed to figure out what goes after &ldquo;.com/&rdquo; for google to search. I went to google and typed in a search. How to play basketball.</p>
+
+<blockquote><p><a href="https://www.google.com/#q=how+to+play+basketball">https://www.google.com/#q=how+to+play+basketball</a></p></blockquote>
+
+<p>The important part of the link is everything following the &ldquo;.com/&rdquo; Google uses &ldquo;#q=&rdquo; and a &ldquo;+&rdquo; symbol for every space. Simply add the &ldquo;#q=&rdquo; to the system and then create a variable to substitute spaces for &ldquo;+&rdquo; symbols.</p>
+
+<blockquote><p>text = gets.chomp
+text.gsub!(&ldquo; &rdquo;,&ldquo;+&rdquo;)
+system(&ldquo;open&rdquo;, &ldquo;<a href="http://www.google.com/#q=text">http://www.google.com/#q=text</a>&rdquo;)</p></blockquote>
+
+<p>Ideally, this would turn all the white spaces to a &lsquo;+&ldquo; and we start with the &rsquo;/#q=.&lsquo; It is exact to the google search. This did not work. The # kept changing into &rsquo;%23&#8217; when opens the google browser. When I type &#8220;How do I play basketball?&rdquo; =></p>
+
+<blockquote><p><a href="http://www.google.com/%23q=%7BURI.escape">http://www.google.com/%23q=%7BURI.escape</a>(@question)%7D
+It also leads to an error page. The browser is encoding # => %23. I had such a hard time figuring out how to either solve or get around this problme. I figured that there was no way of me to control google from changing # into %23. I needed another solution.</p></blockquote>
+
+<p>Breaking what I have done is found another way google searches. The escape method defined in the ruby doc, &ldquo;Escapes the string, replacing all unsafe characters with code.&rdquo; Basically when i input a question with all the &lsquo;unsafe&rsquo; symbols, and spaces with safe code Here is my final code.</p>
+
+<blockquote><p><a href="http://www.google.com/search?q=#">http://www.google.com/search?q=#</a>{URI.escape(@question)}</p></blockquote>
+
+<h4>Lastly, if you have any recommendations for me to improve this script or a vision of where you think this could go. Please feel free to share with me at my twitter handle. &ndash; @johnmoon6</h4>
+
+<h4><a href="https://github.com/jmoon90/nomouse">Visit the repo</a></h4>
+
+<p>The idea is that I run the nomouse.rb script and it will prompt a message, &lsquo;What is your question?&rsquo; then the user will input a question they have. This triggers your default browser to open and google search the question.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Vim and everything else]]></title>
@@ -43,7 +89,17 @@
 </ol>
 
 
-<p>Overall I think it is important to improve and increase your tools in your development toolbox and Vim is definitely a big improvement for me. I see myself working towards understand vim in a deeper level in the up coming weeks. I am excited to see what more I can do with this new found tool.</p>
+<h3>Quick tips to learning Vim</h3>
+
+<ol>
+<li>Read vimtutor in your terminal</li>
+<li>Watch how people move around files. Through videos, mentor, or friend.</li>
+<li>Learn how to move around. I find this the most important part in Vim. You want to jump lines, words, paragraphs, and screens comfortably and efficiently, less key strokes the better.</li>
+<li>Keep going at it. It gets easier and becomes fun getting things right!</li>
+</ol>
+
+
+<p>Overall I think it is important to improve and increase the tools in your development toolbox and Vim is definitely a big improvement for me. I see myself working towards understand vim in a deeper level in the upcoming weeks. I am excited to see what more I can do with this new found tool.</p>
 ]]></content>
   </entry>
   
