@@ -4,7 +4,7 @@
   <title><![CDATA[3 Month RoR Reverse Engineering]]></title>
   <link href="http://jmoon90.github.io/atom.xml" rel="self"/>
   <link href="http://jmoon90.github.io/"/>
-  <updated>2013-11-20T22:20:11-05:00</updated>
+  <updated>2013-11-24T18:38:10-05:00</updated>
   <id>http://jmoon90.github.io/</id>
   <author>
     <name><![CDATA[John Moon]]></name>
@@ -12,6 +12,19 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Breakable Toy - StudyTogether]]></title>
+    <link href="http://jmoon90.github.io/blog/2013/11/22/breakable-toy-studytogether/"/>
+    <updated>2013-11-22T21:14:00-05:00</updated>
+    <id>http://jmoon90.github.io/blog/2013/11/22/breakable-toy-studytogether</id>
+    <content type="html"><![CDATA[<p>StudyTogether is a website where those who want to study with other people can come and join or create a study group. I tried learning Ruby and Ruby on Rails alone. I tried tutorials. I tried books. It was difficult, and I didn&rsquo;t gain much from it. The problem with self-studying and online studying is that there are endless sources of information, but no one to talk with.
+My breakable toy will create study buddies. Other people who are going through the same studying material will be able to talk out problems, teach each other, and learn from the group members mistake. I am going to create a space for users to collaborate on their learning. Something like Khan academy.
+Through my experience at Launch Academy, this idea is becoming more and more relevant. I noticed how my learning curb has spiked and is acclerating as I am surrounding with people who are passionate and wanting to learn Ruby on Rails. I will try to incorporate aspects of what I believe to work well in learning in a group environment.</p>
+
+<p>Code On.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Ask Google through your Terminal]]></title>
