@@ -1,0 +1,249 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Practical Object Oriented Design for Ruby - 3 Month RoR Reverse Engineering</title>
+    <meta name="author" content="John Moon">
+    
+	<meta name="description" content="In the past week at Launch Academy we dived into object oriented programming. Here is a definition by tutorialspoint. Ruby is pure object-oriented &hellip;">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<link href="/atom.xml" rel="alternate" title="3 Month RoR Reverse Engineering" type="application/atom+xml">
+	<link rel="canonical" href="">
+	<link href="/favicon.ico" rel="shortcut icon">
+    <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+
+    <link href='http://fonts.googleapis.com/css?family=Slackey' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Amethysta' rel='stylesheet' type='text/css'>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+    <script type="text/javascript" src="/javascripts/jquery-tapir.js"></script>
+
+    <!-- remove or comment it to disable ajaxification -->   
+    <script src="/javascripts/ajaxify.js"></script>
+   
+    
+    
+
+</head>
+
+
+<body>
+    <div id="wrapper">
+    <header id="header" class="inner"><!-- for more effects see _animate.scss -->
+<h1 class="animated bounceInDown">
+    <div id="headerbg">
+        John Moon
+    </div>
+</h1>
+<br>
+
+<ul id="social-links" style="text-align:center">
+  
+  <!-- GitHub -->
+  <li>
+  <a href="https://github.com/jmoon90" class="github" title="Github"></a>
+  </li>
+  
+  
+  
+  
+  <!-- Twitter -->
+  <li>
+  <a href="http://www.twitter.com/johnmoon6" class="twitter" title="Twitter"></a>
+  </li>
+  
+  
+  
+  
+  
+</ul>
+
+
+<!-- use full url including 'index.html' for navigation bar if you are using ajax -->
+<ul id="nav">
+	<li id="ajax"><a href="/index.html">Home</a></li>
+	<li id="ajax"><a href="/blog/archives/index.html">Archives</a></li>
+    <li><a href="/atom.xml">RSS</a></li>
+    
+    <li>
+    <div id="dark">
+        <form method="get" action="/search.html" id="search">
+            <input name="query" type="text" placeholder="Search..." x-webkit-speech />
+        </form>
+    </div>
+    </li>
+        
+</ul>
+
+
+
+
+</header>
+
+<div id="toload">
+<!-- begin toload --> 
+    <div id="content" class="inner">
+        <article class="post">
+	<h2 class="title">Practical Object Oriented Design for Ruby</h2>
+	<div class="entry-content"><p>In the past week at Launch Academy we dived into object oriented programming. Here is a definition by <a href="http://www.tutorialspoint.com/ruby/ruby_object_oriented.htm">tutorialspoint</a>.</p>
+
+<blockquote><p>Ruby is pure object-oriented language and everything appears to Ruby as
+an object. Every value in Ruby is an object, even the most primitive
+things: strings, numbers and even true and false. Even a class itself
+is an object that is an instance of the Class class.</p></blockquote>
+
+<p>My definition is classes are there to help organize and structure
+the program so that it may be easily consumed by others. Todays post is
+about POODR that adds on top of my definition. It is a way to organize
+and structure program so that it may be easily consumed AND changed as
+new features are added.</p>
+
+<p>I love that! As programmers, not only should we be thinking to making a
+working app, but also an app that has low replacement cost in the future. The idea is
+to write code that is <a href="http://en.wikipedia.org/wiki/SOLID_(object-oriented_design">SOLID</a> (Single responsibility, Open-closed, Liskov substitution, Interface segregation, and Dependancy Inversion). I&rsquo;m currently focusing on the single responsibility section of the SOLID. I find it difficult as a programming beginner to write classes that are loosely coupled as I want them to be. I started with classes that were family and knew everything about each other. However, with some easy to implement tricks and tips from the book I am learning to write more loosely coupled programs.</p>
+
+<p>For instance, I wrote a program about a company with many employees, who
+wanted to know if their employee owed taxes or was due a refund. My
+first instinct was to create a company class and an employee class. I
+was having difficulty of instantiating a single employee. The problem
+was that I was iterating and saving the employees into a single hash,
+then passing the hash to the employee class. This caused 2 problems.
+First all my employees were a single instance. Second, because they are
+a single instance when I passed in the instance to the Employee class,
+the employee class was not reading in 1 employee at a time, but the
+whole slob.</p>
+
+<blockquote><p>class Company</p>
+
+<blockquote><p>def load_data(file)</p>
+
+<blockquote><p>employees = []
+CSV.foreach(file, :headers => true) do |row|</p>
+
+<blockquote><p>employee = row.to_hash</p>
+
+<p>employees &lt;&lt; employee</p></blockquote>
+
+<p>end</p>
+
+<p>employees</p></blockquote>
+
+<p>end</p></blockquote>
+
+<p>end</p>
+
+<p>Employee.new(employees)</p></blockquote>
+
+<p>For an experienced developer the solution was right in front of them. The fix was quite simple. I just needed to change where I was instantiating the object. The previous code changed to the following.</p>
+
+<blockquote><p>class Company</p>
+
+<blockquote><p>self.load_data(file)</p>
+
+<blockquote><p>employees = []
+CSV.foreach(file, :headers => true) do |row|</p>
+
+<p>employee = Employee.new(row.to_hash)</p>
+
+<p>employees &lt;&lt; employee</p></blockquote>
+
+<p>end</p>
+
+<p>employees</p></blockquote>
+
+<p>end</p></blockquote>
+
+<p>This instantiates each employee separately as I pull data from the CSV file. Now
+when I pass my employee to the Employee class, it will be of 1 instance
+of an employee. The benefit is that I won&rsquo;t have to do an iterator in my
+employee class but instead I can iterate inside my company class.</p>
+
+<p>Another trick I found very useful was passing in hashes as arguments
+instead of a multiple variables. The benefits are that you don&rsquo;t have to
+worry about in what order you pass in the arguments. If you don&rsquo;t pass
+in a value for a specific instance, you can simply give it a default
+value.</p>
+
+<blockquote><p>class Employee</p>
+
+<blockquote><p>def initialize(arguments)</p>
+
+<blockquote><p>@employee = arguments[&lsquo;employee&rsquo;] || &lsquo;missing name&rsquo;
+@tax_owed = arguments[&lsquo;tax_owed&rsquo;] || &lsquo;0&rsquo;
+@tax_paid = arguments[&lsquo;tax_paid&rsquo;] || &lsquo;0&rsquo;</p></blockquote>
+
+<p>end</p></blockquote>
+
+<p>end</p></blockquote>
+
+<p>Hope you learned something from that. If you have any cool tricks feel
+free to share in the comments.</p>
+
+<br>
+
+
+<p>Happy coding!</p>
+
+<p>John</p>
+</div>
+
+<div class="meta">
+	
+</div>
+</article>
+
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	
+	<a class="addthis_button_tweet"></a>
+	
+	
+	<a class="addthis_counter addthis_pill_style"></a>
+	</div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
+
+
+
+    </div>
+    <footer id="footer">
+    <div style="display:inline">
+    Copyright &copy; 2013
+
+    John Moon
+. Powered by <a href="http://octopress.org">Octopress</a> | 
+    Theme <a href="http://github.com/panks/fabric">fabric</a> by <a href="http://panks.me">Pankaj Kumar</a>
+</div>
+
+
+    </footer>
+    <script src="/javascripts/fabric.js"></script>
+<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+	$('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
+
+
+
+
+
+
+<!-- end toload --> 
+</div>
+</div>
+<script src="/javascripts/jquery.ui.totop.js" type="text/javascript"></script>
+<script type="text/javascript">
+/*<![CDATA[*/
+;(function($){$().UItoTop({easingType:'easeOutCirc'});})(jQuery); 
+/*]]>*/
+</script><!-- remove it to remove the scroll to top button -->
+</body>
+</html>
