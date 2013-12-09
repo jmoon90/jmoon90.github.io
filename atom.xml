@@ -4,7 +4,7 @@
   <title><![CDATA[3 Month RoR Reverse Engineering]]></title>
   <link href="http://jmoon90.github.io/atom.xml" rel="self"/>
   <link href="http://jmoon90.github.io/"/>
-  <updated>2013-12-08T19:51:02-05:00</updated>
+  <updated>2013-12-08T19:53:03-05:00</updated>
   <id>http://jmoon90.github.io/</id>
   <author>
     <name><![CDATA[John Moon]]></name>
@@ -27,7 +27,7 @@ is an object that is an instance of the Class class.</p></blockquote>
 
 <p>My definition is classes are there to help organize and structure
 the program so that it may be easily consumed by others. Todays post is
-about POODR that adds on top of my definition. It is a way to organize
+about <a href="http://www.poodr.com/">POODR</a> that adds on top of my definition. It is a way to organize
 and structure program so that it may be easily consumed AND changed as
 new features are added.</p>
 
