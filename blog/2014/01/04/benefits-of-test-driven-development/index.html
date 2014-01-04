@@ -3,10 +3,11 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Breakable Toy - StudyTogether - 3 Month RoR Reverse Engineering</title>
+	<title>Benefits of Test Driven Development - 3 Month RoR Reverse Engineering</title>
     <meta name="author" content="John Moon">
     
-	<meta name="description" content="StudyTogether is a website where those who want to study with other people can come and join or create a study group. I tried learning Ruby and Ruby &hellip;">
+	<meta name="description" content="The past week I have taken a deep dive in the big boys tool club, TDD
+with capybara and rspec. This post isn&rsquo;t to discuss about tools for TDD, &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -89,14 +90,81 @@
 <!-- begin toload --> 
     <div id="content" class="inner">
         <article class="post">
-	<h2 class="title">Breakable Toy - StudyTogether</h2>
-	<div class="entry-content"><p>StudyTogether is a website where those who want to study with other people can come and join or create a study group. I tried learning Ruby and Ruby on Rails alone. I tried tutorials. I tried books. It was difficult, and I didn&rsquo;t gain much from it. The problem with self-studying and online studying is that there are endless sources of information, but no one to talk with.</p>
+	<h2 class="title">Benefits of Test Driven Development</h2>
+	<div class="entry-content"><p>The past week I have taken a deep dive in the big boys tool club, TDD
+with capybara and rspec. This post isn&rsquo;t to discuss about tools for TDD,
+but the WHY companies and individuals should write test for their code.</p>
 
-<p>My breakable toy will create study buddies. Other people who are going through the same studying material will be able to talk out problems, teach each other, and learn from the group members mistake. I am going to create a space for users to collaborate on their learning. Something like Khan academy.</p>
+<p><b>I want to start of with the negatives of TDD.</b></p>
 
-<p>Through my experience at Launch Academy, this idea is becoming more and more relevant. I noticed how my learning curb has spiked and is acclerating as I am surrounding with people who are passionate and wanting to learn Ruby on Rails. I will try to incorporate aspects of what I believe to work well in learning in a group environment.</p>
+<ol>
+  <li>Testing takes time, and maybe the deadlines approaching. We hear
+it all the time. We don&#8217;t have time to test, because we need to hit the
+deadline. It will slow us down&#8230; WRONG. It will take you far more time
+and brain power to debug or make changes to your code with no tests.
+More on the later</li>
+  <li>Testing isn&#8217;t perfect, and sometimes we can waste of lot of time writing tests.</li>
+  <li>We can probably double our code output if we didn&#8217;t have to write
+any test</li>
+</ol>
 
-<p>Code On.</p>
+
+
+
+<br>
+
+
+<p>Thats all I could think of for reasons not to write test. If I must say,
+those are some terrible reasons not to write tests.</p>
+
+<br>
+
+
+
+
+<h3>Why you should test</h3>
+
+
+<ol>
+  <li>Testing helps us confidently modify our existing code. Why?
+Because as soon as we break something, our test SHOULD fail too</li>
+  <li>It&#8217;s faster! Some of you are probably thinking, &#8220;you just said
+testing takes time and you would double your code output if you didn&#8217;t
+write test. LIES.&#8221; Well it&#8217;s true that we may be able to spin out code
+faster, but in the long run, we would most likely lose. If we had to debug
+our app that has no test, but is twice as large. How long do you think
+it would take to debug such an application. On top of that the
+headaches, the tears, and depression is simply not worth it</li>
+  <li>It pushes us for better design. By this I mean that writing tests
+helps us see options when it comes to implementation. While we think and
+decide what we want to test, and how we want to test it. This additional
+time we&#8217;re spending on our application design helps us to pick better
+options. I&#8217;m not saying it&#8217;ll be the perfect design and you won&#8217;t have
+to touch it. But I believe it will be far better off, than if you went
+straight into implementation</li>
+  <li>We spend less time implementing new features to our existing code
+base. This going back to point number 1, of being confident of modifying
+our code because of the test.</li>
+<li>We can&#8217;t afford not to test. Not writing test is expensive. It would
+cost the business more, in the long run because of the time we have to
+put in to debug. This slows production, and ultimately costs us more. </li>
+<li>It&#8217;s a chepaer alternative</li>
+</ol>
+
+
+<p>I think testing is important for all these reasons. I can&rsquo;t imagine a
+company who don&rsquo;t test their application. That shows me they don&rsquo;t care
+what the code looks like as long as it &lsquo;works.&rsquo; What rubbish and shotty
+job.</p>
+
+<p>I would love to work at a company that respects their clients and their
+employees time to implement testing in all levels (acceptance and unit
+testing).</p>
+
+<h3>Want to talk? Shoot me a tweet @jmoon90</h3>
+
+
+<p>John</p>
 </div>
 
 <div class="meta">

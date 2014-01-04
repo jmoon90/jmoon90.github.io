@@ -4,7 +4,7 @@
   <title><![CDATA[3 Month RoR Reverse Engineering]]></title>
   <link href="http://jmoon90.github.io/atom.xml" rel="self"/>
   <link href="http://jmoon90.github.io/"/>
-  <updated>2013-12-08T19:54:40-05:00</updated>
+  <updated>2014-01-04T18:13:28-05:00</updated>
   <id>http://jmoon90.github.io/</id>
   <author>
     <name><![CDATA[John Moon]]></name>
@@ -12,6 +12,88 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Benefits of Test Driven Development]]></title>
+    <link href="http://jmoon90.github.io/blog/2014/01/04/benefits-of-test-driven-development/"/>
+    <updated>2014-01-04T17:39:00-05:00</updated>
+    <id>http://jmoon90.github.io/blog/2014/01/04/benefits-of-test-driven-development</id>
+    <content type="html"><![CDATA[<p>The past week I have taken a deep dive in the big boys tool club, TDD
+with capybara and rspec. This post isn&rsquo;t to discuss about tools for TDD,
+but the WHY companies and individuals should write test for their code.</p>
+
+<p><b>I want to start of with the negatives of TDD.</b></p>
+
+<ol>
+  <li>Testing takes time, and maybe the deadlines approaching. We hear
+it all the time. We don&#8217;t have time to test, because we need to hit the
+deadline. It will slow us down&#8230; WRONG. It will take you far more time
+and brain power to debug or make changes to your code with no tests.
+More on the later</li>
+  <li>Testing isn&#8217;t perfect, and sometimes we can waste of lot of time writing tests.</li>
+  <li>We can probably double our code output if we didn&#8217;t have to write
+any test</li>
+</ol>
+
+
+
+
+<br>
+
+
+<p>Thats all I could think of for reasons not to write test. If I must say,
+those are some terrible reasons not to write tests.</p>
+
+<br>
+
+
+
+
+<h3>Why you should test</h3>
+
+
+<ol>
+  <li>Testing helps us confidently modify our existing code. Why?
+Because as soon as we break something, our test SHOULD fail too</li>
+  <li>It&#8217;s faster! Some of you are probably thinking, &#8220;you just said
+testing takes time and you would double your code output if you didn&#8217;t
+write test. LIES.&#8221; Well it&#8217;s true that we may be able to spin out code
+faster, but in the long run, we would most likely lose. If we had to debug
+our app that has no test, but is twice as large. How long do you think
+it would take to debug such an application. On top of that the
+headaches, the tears, and depression is simply not worth it</li>
+  <li>It pushes us for better design. By this I mean that writing tests
+helps us see options when it comes to implementation. While we think and
+decide what we want to test, and how we want to test it. This additional
+time we&#8217;re spending on our application design helps us to pick better
+options. I&#8217;m not saying it&#8217;ll be the perfect design and you won&#8217;t have
+to touch it. But I believe it will be far better off, than if you went
+straight into implementation</li>
+  <li>We spend less time implementing new features to our existing code
+base. This going back to point number 1, of being confident of modifying
+our code because of the test.</li>
+<li>We can&#8217;t afford not to test. Not writing test is expensive. It would
+cost the business more, in the long run because of the time we have to
+put in to debug. This slows production, and ultimately costs us more. </li>
+<li>It&#8217;s a chepaer alternative</li>
+</ol>
+
+
+<p>I think testing is important for all these reasons. I can&rsquo;t imagine a
+company who don&rsquo;t test their application. That shows me they don&rsquo;t care
+what the code looks like as long as it &lsquo;works.&rsquo; What rubbish and shotty
+job.</p>
+
+<p>I would love to work at a company that respects their clients and their
+employees time to implement testing in all levels (acceptance and unit
+testing).</p>
+
+<h3>Want to talk? Shoot me a tweet @jmoon90</h3>
+
+
+<p>John</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Practical Object Oriented Design for Ruby]]></title>
